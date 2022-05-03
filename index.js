@@ -14,32 +14,38 @@ const playerCost = (lineup) => {
 }
 
 const playerPosition = (lineup) => {
-  let numberOfOF= []
-  let restOfPositions = []
+  const OF = outfield(lineup)
+  const pitch = pitcher(lineup)
+  const first = firstBase(lineup)
+  const second = secondBase(lineup)
+  const third = thirdBase(lineup)
+  const catch = catcher(lineup)
+  const short = shortStop(lineup)
 
-  lineup.map((player) => player.position 
-  if (player.position === 'OF'){
-    
-  })
 }
+
+const outfield = (lineup) => {
+  const outfieldplayers = lineup.filter((player) => player.position === 'OF')
+  
+  if (outfieldplayers.lengt !== 3) {
+    return false
+  } else return true
+
+}
+
+const pitcher = (lineup) => {
+  const pitcherplayers = lineup.filter((player) => player.position === 'P')
+  
+  if (pitcherplayers.lengt !== 1) {
+    return false
+  } else return true
+
+}
+
 
 const playerTeam = (lineup) => {
   return
 }
 
-// Function that loops to evaluate the player positions
-// Function that loops through the data to evaluate total cost
-// Function that loops through the data to evlauate teams
-// Function that loops through the data to evaluate games 
-
 
 module.exports = validateLineup
-
-
-//array.map() <--- performs a funciton on every value in the array, keeps the same
-//number of starting # of array data, just changing it in some way 
-
-//array/filter <--- creating a new array, performing a function (sometimes), 
-
-
-// array.reduce((argument, accumulator) => accumulator performing a function, reducing it into one, 0 <---- starting value)
