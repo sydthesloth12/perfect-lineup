@@ -22,6 +22,9 @@ const playerPosition = (lineup) => {
   const catchers = catcher(lineup)
   const short = shortStop(lineup)
 
+  if (OF && pitch && first && second && third && catchers && short) {
+    return true
+  }
 }
 
 const outfield = (lineup) => {
@@ -29,7 +32,7 @@ const outfield = (lineup) => {
   
   if (outfieldplayers.length !== 3) {
     return false
-  } else return true
+  } 
 
 }
 
@@ -38,7 +41,7 @@ const pitcher = (lineup) => {
   
   if (pitcherplayers.length !== 1) {
     return false
-  } else return true
+  } 
 
 }
 
@@ -47,7 +50,7 @@ const firstBase = (lineup) => {
   
   if (firstBaseplayers.length !== 1) {
     return false
-  } else return true
+  } 
 
 }
 
@@ -56,7 +59,7 @@ const secondBase = (lineup) => {
   
   if (secondBaseplayers.length !== 1) {
     return false
-  } else return true
+  } 
 
 }
 
@@ -65,7 +68,7 @@ const thirdBase = (lineup) => {
   
   if (thirdBaseplayers.length !== 1) {
     return false
-  } else return true
+  } 
 
 }
 
@@ -74,7 +77,7 @@ const catcher = (lineup) => {
   
   if (catcherplayers.length !== 1) {
     return false
-  } else return true
+  } 
 
 }
 
@@ -83,7 +86,7 @@ const shortStop = (lineup) => {
   
   if (shortStopPlayers.length !== 1) {
     return false
-  } else return true
+  } 
 
 }
 
