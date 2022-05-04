@@ -1,15 +1,18 @@
 const validateLineup = (lineup) => {
+  
   if (playerPosition(lineup) && playerCost(lineup) && playerTeam(lineup) && playerGame(lineup)) {
     return true
   } else return false
+
+    
 }
 
 const playerCost = (lineup) => {
-  let totalSalary = lineup.reduce((player, currentSalary) => currentSalary += player.salary, 0)
+  let totalSalary = lineup.reduce((salary, player) => salary += player.salary, 0)
 
   if (totalSalary > 45000) {
     return false
-  }
+  } else return true 
 }
 
 const playerPosition = (lineup) => {
@@ -20,12 +23,13 @@ const playerPosition = (lineup) => {
   const third = thirdBase(lineup)
   const catchers = catcher(lineup)
   const short = shortStop(lineup)
-
+  
   if (OF && pitch && first && second && third && catchers && short) {
     return true
   }
 
   return false
+  
 }
 
 const outfield = (lineup) => {
